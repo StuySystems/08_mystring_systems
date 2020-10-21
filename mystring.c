@@ -9,7 +9,7 @@
 int mystrlen(char *s)
 {
     int length = 0;
-    while (*s != 0 && *s != '\0') // make sure we're not encountering the NULL end of string
+    while (*s) // make sure we're not encountering the NULL end of string
     {
         length++;
         s++;
@@ -20,12 +20,12 @@ int mystrlen(char *s)
 char *mystrcat(char *s1, char *s2)
 {
     char *start = s1;
-    while (*s1 != 0 && *s1 != '\0')
+    while (*s1)
     {
         s1++;
     }
 
-    while (*s2 != 0 && *s2 != '\0')
+    while (*s2)
     {
         *s1 = *s2;
         s1++;
@@ -39,15 +39,77 @@ char *mystrcat(char *s1, char *s2)
 
 char *mystrncpy(char *s1, char *s2, int size)
 {
-    return 0;
+    char *start = s1;
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        if (!s2)
+        {
+            *s1 = 0;
+            break;
+        }
+        else
+        {
+            *s1 = *s2;
+        }
+    }
+
+    while (i < size)
+    {
+        *s1 = 0;
+    }
+
+    return start;
 }
 
 char *mystrchr(char *s, int c)
 {
-    return 0;
+    while (*s)
+    {
+        if (*s == c)
+        {
+            return s;
+        }
+        s++;
+    }
+    if (!c)
+    {
+        return s;
+    }
+    return NULL;
 }
 
 int mystrcmp(char *s1, char *s2)
 {
-    return 0;
+    while (*s1 && *s2)
+    {
+        if (*s1 != *s2)
+        {
+            if (s1 > s2)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        s1++;
+        s2++;
+    }
+    if (!*s1 && !*s2)
+    {
+        return 0;
+    }
+    else
+    {
+        if (!*s1)
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }

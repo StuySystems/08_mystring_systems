@@ -29,30 +29,42 @@ int main()
   printf("[standard]:\t[%s]\n", strncpy(s1, s3, 3));
   printf("[mine]:\t\t[%s]\n", mystrncpy(s1, s3, 3));
 
-  /*
   printf("\nTesting strchr(s1, 'l'):\n");
-  printf("[standard]:\t[%p]\n", strchr(s1, 'l') );
-  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'l') );
-  
+  printf("[standard]:\t[%p]\n", strchr(s1, 'l'));
+  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'l'));
+
   printf("\nTesting strchr(s1, 0):\n");
-  printf("[standard]:\t[%p]\n", strchr(s1, 0) );
-  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 0) );
+  printf("[standard]:\t[%p]\n", strchr(s1, 0));
+  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 0));
 
   printf("\nTesting strchr(s1, 'z'):\n");
-  printf("[standard]:\t[%p]\n", strchr(s1, 'z') );
-  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'z') );
+  printf("[standard]:\t[%p]\n", strchr(s1, 'z'));
+  printf("[mine]:\t\t[%p]\n", mystrchr(s1, 'z'));
+
+  printf("\nTesting strchr(s2, 'l'):\n");
+  printf("[standard]:\t[%p]\n", strchr(s2, 'l'));
+  printf("[mine]:\t\t[%p]\n", mystrchr(s2, 'l'));
+
+  printf("\nTesting strchr(s2, '\\0'):\n");
+  printf("[standard]:\t[%p]\n", strchr(s2, '\0'));
+  printf("[mine]:\t\t[%p]\n", mystrchr(s2, '\0'));
 
   printf("\nTesting strcmp\n");
   printf("\tComparting ab to abc:\n");
-  printf("\t\t[standard]:\t[%d]\n", strcmp("ab", "abc") );
-  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("ab", "abc") );
+  printf("\t\t[standard]:\t[%d]\n", strcmp("ab", "abc"));
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("ab", "abc"));
   printf("\tComparting abc to ab:\n");
-  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "ab") );
-  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "ab") );
+  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "ab"));
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "ab"));
   printf("\tComparting abc to abc:\n");
-  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "abc") );
-  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "abc") );
-  */
+  printf("\t\t[standard]:\t[%d]\n", strcmp("abc", "abc"));
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "abc"));
+  printf("\tComparting hello to abc:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("hello", "abc"));
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("hello", "abc"));
+  printf("\tComparting acb to abc:\n");
+  printf("\t\t[standard]:\t[%d]\n", strcmp("acb", "abc"));
+  printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("acb", "abc"));
 
   return 0;
 }
